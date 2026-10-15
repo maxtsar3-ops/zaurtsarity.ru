@@ -1,0 +1,38 @@
+<div class="card" data-category="bronze">
+                <div class="img-wrap">
+                    <img src="devushka.jpg" alt="Девушка">
+                </div>
+                <div class="card-info">
+                    <h3>Девушка</h3>
+                    <span class="card-tag">Бронза</span>
+                </div>
+            </div>
+        </main>
+
+    </div>
+
+    <footer>
+        <p>© Цариты Заур Шавлович. Наследие и архив скульптора.</p>
+    </footer>
+
+    <script>
+        function filterCategory(category) {
+            // Update active button
+            const buttons = document.querySelectorAll('.filter-btn');
+            buttons.forEach(btn => btn.classList.remove('active'));
+            event.target.classList.add('active');
+
+            // Filter cards
+            const cards = document.querySelectorAll('.card');
+            cards.forEach(card => {
+                if (category === 'all' || card.getAttribute('data-category') === category) {
+                    card.style.display = 'block';
+                } else {
+                    card.style.display = 'none';
+                }
+            });
+        }
+    </script>
+
+</body>
+</html>
